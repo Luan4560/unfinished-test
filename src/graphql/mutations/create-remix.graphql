@@ -1,0 +1,27 @@
+mutation CreateRemix(
+  $authorEmail: String!,
+  $description: String!,
+  $genre: GenreTypeEnum!,
+  $isStore: Boolean!,
+  $name: String!,
+  $price: Int!,
+  $trackLength: Int!,
+  ) {
+  createRemix(payload: {
+    authorEmail: $authorEmail,
+    description: $description,
+    genre: $genre
+    isStore: $isStore,
+    name: $name,
+    price: $price
+    trackLength: $trackLength,
+  }) {
+    authorEmail
+    description
+    genre
+    isStore
+    name
+    price
+    trackLength
+  }
+}

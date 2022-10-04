@@ -1,0 +1,14 @@
+query GetRemixes{
+  remixes(payload: {}) {
+    items {
+      id
+      price
+      isStore
+      genre,
+      name,
+      description
+      trackLength
+      authorEmail
+    }
+  }
+}

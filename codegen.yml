@@ -1,0 +1,29 @@
+generates:
+  src/graphql/types/_server.ts:
+    schema: https://test-backend.smm.dev.architech.nyc/graphql
+
+    documents: './src/graphql/**/*.graphql'
+
+    plugins:
+      - add:
+          content:
+            - '// ------------------------------------------------------'
+            - '// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)'
+            - '// ------------------------------------------------------'
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      avoidOptionals: false
+      typesPrefix: I
+      enumPrefix: false
+      declarationKind:
+        type: 'interface'
+        input: 'interface'
+      scalars:
+        AWSDateTime: string
+        JSON: object
+      reactApolloVersion: 3
+      withHooks: true
+      withHOC: false
+      withComponent: false
